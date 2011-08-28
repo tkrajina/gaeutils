@@ -1,7 +1,12 @@
 from google.appengine.ext import db
 
 def prefetch_references( entities, *properties ):
-	# TODO: doc and limit
+	""" 
+	Will prefetch references to other objects for n:1 relation. Prefetched references
+	may be retrieved with _prefetched sufix. 
+
+	See README.txt for code examples.
+	"""
 	if not entities:
 		return None
 	
