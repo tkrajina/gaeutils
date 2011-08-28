@@ -3,6 +3,28 @@ This module consists of 3 submodules:
 - geo -- for queries on geocoded data
 - prefetch -- pereftching 1:n relations
 
+fulltext module
+===============
+
+Example code:
+
+import gaeutils.prefetch as mod_fulltext
+
+class Article:
+	...
+	search_words = db.StringListProperty()
+	...
+
+article = Article()
+...
+
+# save
+
+# Execute before save:
+mod_fulltext.parse_words( '%s %s' % ( article.title, article.description ) )
+
+# Search:
+
 geo module
 ==========
 
