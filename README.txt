@@ -24,6 +24,14 @@ article = Article()
 mod_fulltext.parse_words( '%s %s' % ( article.title, article.description ) )
 
 # Search:
+words = [ 'word1', 'word2' ]
+search_result = mod_fulltext.search( \
+		'Article', \
+		words, \
+		'search_words', \
+		min_words = 1, \
+		limit = 100, \
+		conditions = conditions )
 
 geo module
 ==========
