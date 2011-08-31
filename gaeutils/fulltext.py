@@ -95,8 +95,8 @@ def search( \
 			args = words
 
 			if conditions:
-				for key in conditions.keys():
-					gql += ' and %s :%s' % ( key, 1 + len( args ) )
+				for key, value in conditions.items():
+					gql += ' and %s = :%s' % ( key, 1 + len( args ) )
 					args.append( conditions[ key ] )
 
 			logging.debug( gql )
