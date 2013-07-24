@@ -8,11 +8,11 @@ def prefetch_references( entities, *properties ):
 	See README.txt for code examples.
 	"""
 	if not entities:
-		return None
+		return []
 	
 	result = []
 	for entity in entities:
-		result.append( entity )
+		result.append(entity)
 
 	if not properties:
 		return result
